@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SyncConfigs>
+    <ServiceConfig ServiceName="SyncContract" ErpApiName="" ErpApiDesc="获取云服务合同">
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="yunfuwu_contract_id" ErpTable="cb_Contract" ErpField="id"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="contract_guid" ErpTable="cb_Contract" ErpField="erp_id" ErpFieldDesc="合同主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="contract_code" ErpTable="cb_Contract" ErpField="no" ErpFieldDesc="合同编码"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="contract_name" ErpTable="cb_Contract" ErpField="name" ErpFieldDesc="合同名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="master_contract_guid" ErpTable="cb_Contract" ErpField="master_erp_id" ErpFieldDesc="关联主合同GUID"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="project_guid_list" ErpTable="cb_Contract" ErpField="project_code_list" ErpFieldDesc="项目主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="project_name_list" ErpTable="cb_Contract" ErpField="project_name_list" ErpFieldDesc="项目名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="yf_provider_guid" ErpTable="cb_Contract" ErpField="yf_company_id" ErpFieldDesc="乙方主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="yf_provider_name" ErpTable="cb_Contract" ErpField="yf_company" ErpFieldDesc="乙方名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="jf_provider_guid" ErpTable="cb_Contract" ErpField="jf_company_id" ErpFieldDesc="甲方主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="jf_provider_name" ErpTable="cb_Contract" ErpField="jf_company" ErpFieldDesc="甲方名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="js_state" ErpTable="cb_Contract" ErpField="js_state" ErpFieldDesc="合同结算状态"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sign_date" ErpTable="cb_Contract" ErpField="sign_date" ErpFieldDesc="签约日期"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount" ErpTable="cb_Contract" ErpField="amount" ErpFieldDesc="合同净值"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount_bz" ErpTable="cb_Contract" ErpField="ht_amount_bz" ErpFieldDesc="合同净值_合同币"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_kind" ErpTable="cb_Contract" ErpField="ht_kind" ErpFieldDesc="合同细类"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_sub_contract" ErpTable="cb_Contract" ErpField="is_sub_contract" ErpFieldDesc="是否分包合同"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_enable_progress_payment" ErpTable="cb_Contract" ErpField="is_enable_progress_payment" ErpFieldDesc="应付进度款标记"/>
+        <!--以下为扩展备用字段-->
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="projguid" ErpTable="cb_Contract" ErpField="proj_id" ErpFieldDesc="项目GUID"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_amount" ErpTable="cb_Contract" ErpField="adjust_amount" ErpFieldDesc="调整后合同净值"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_amount_bz" ErpTable="cb_Contract" ErpField="adjust_amount_bz" ErpFieldDesc="调整后合同净值_合同币"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_amount_non_tax" ErpTable="cb_Contract" ErpField="adjust_amount_non_tax" ErpFieldDesc="调整后合同净值不含税"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_total_amount_bz" ErpTable="cb_Contract" ErpField="adjust_total_amount_bz" ErpFieldDesc="调整后合同总金额_合同币"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bc_contract_amount" ErpTable="cb_Contract" ErpField="bc_contract_amount" ErpFieldDesc="补充合同净值_含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bc_contract_amount_bz" ErpTable="cb_Contract" ErpField="bc_contract_amount_bz" ErpFieldDesc="补充合同净值（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bc_contract_amount_non_tax" ErpTable="cb_Contract" ErpField="bc_contract_amount_non_tax" ErpFieldDesc="补充合同净值_不含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount_input_tax" ErpTable="cb_Contract" ErpField="ht_amount_input_tax" ErpFieldDesc="合同净值进项税额"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount_non_tax" ErpTable="cb_Contract" ErpField="ht_amount_non_tax" ErpFieldDesc="合同净值_不含税"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_overall_contract" ErpTable="cb_Contract" ErpField="is_overall_contract" ErpFieldDesc="是否总承包合同"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sub_contract_amount" ErpTable="cb_Contract" ErpField="sub_contract_amount" ErpFieldDesc="分包合同净值_含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sub_contract_amount_bz" ErpTable="cb_Contract" ErpField="sub_contract_amount_bz" ErpFieldDesc="分包合同净值（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sub_contract_amount_non_tax" ErpTable="cb_Contract" ErpField="sub_contract_amount_non_tax" ErpFieldDesc="分包合同净值_不含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="item_amount" ErpTable="cb_Contract" ErpField="item_amount" ErpFieldDesc="甲供材金额"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_amount" ErpTable="cb_Contract" ErpField="total_amount" ErpFieldDesc="合同金额"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_apply_amount_bz" ErpTable="cb_Contract" ErpField="total_apply_amount_bz" ErpFieldDesc="累计申请金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_deduct_amount_bz" ErpTable="cb_Contract" ErpField="total_deduct_amount_bz" ErpFieldDesc="累计应扣金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_deducted_amount_bz" ErpTable="cb_Contract" ErpField="total_deducted_amount_bz" ErpFieldDesc="累计已扣金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_pay_amount" ErpTable="cb_Contract" ErpField="total_pay_amount" ErpFieldDesc="累计实付金额（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_pay_amount_bz" ErpTable="cb_Contract" ErpField="total_pay_amount_bz" ErpFieldDesc="累计实付金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_plan_amount_bz" ErpTable="cb_Contract" ErpField="total_plan_amount_bz" ErpFieldDesc="已编制付款计划金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="contract_mode" ErpTable="cb_Contract" ErpField="contract_mode" ErpFieldDesc="合同模式"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_consortium" ErpTable="cb_Contract" ErpField="is_consortium" ErpFieldDesc="是否联合体"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="receiving_contractor_id" ErpTable="cb_Contract" ErpField="receiving_contractor_id" ErpFieldDesc="收款单位id"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="receiving_contractor_name" ErpTable="cb_Contract" ErpField="receiving_contractor_name" ErpFieldDesc="收款单位名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="epc_contract_pay_mode" ErpTable="cb_Contract" ErpField="epc_contract_pay_mode" ErpFieldDesc="EPC合同付款模式"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_cancellation" ErpTable="cb_Contract" ErpField="is_cancellation" ErpFieldDesc="合同是否已作废"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="erp_type_id" ErpTable="cb_Contract" ErpField="erp_type_id" ErpFieldDesc="合同类型ID"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetSubContract" ErpApiName="GetSubContract" ErpApiDesc="获取erp分包合同">
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="contract_guid" ErpTable="cb_SubContract" ErpField="ContractGUID" ErpFieldDesc="合同主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="buguid" ErpTable="cb_SubContract" ErpField="BUGUID" ErpFieldDesc="组织架构主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="contract_code" ErpTable="cb_SubContract" ErpField="ContractCode" ErpFieldDesc="合同编码"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="contract_name" ErpTable="cb_SubContract" ErpField="ContractName" ErpFieldDesc="合同名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="project_guid_list" ErpTable="cb_SubContract" ErpField="ProjectGUIDList" ErpFieldDesc="项目主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="project_name_list" ErpTable="cb_SubContract" ErpField="ProjectNameList" ErpFieldDesc="项目名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="yf_provider_guid" ErpTable="cb_SubContract" ErpField="YfProviderGUID" ErpFieldDesc="乙方主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="yf_provider_name" ErpTable="cb_SubContract" ErpField="YfProviderName" ErpFieldDesc="乙方名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="jf_provider_guid" ErpTable="cb_SubContract" ErpField="JfProviderGUID" ErpFieldDesc="甲方主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="jf_provider_name" ErpTable="cb_SubContract" ErpField="JfProviderName" ErpFieldDesc="甲方名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="js_state" ErpTable="cb_SubContract" ErpField="JsState" ErpFieldDesc="合同结算状态"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sign_date" ErpTable="cb_SubContract" ErpField="SignDate" ErpFieldDesc="签约日期"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount" ErpTable="cb_SubContract" ErpField="HtAmount" ErpFieldDesc="合同净值"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount_bz" ErpTable="cb_SubContract" ErpField="HtAmount_Bz" ErpFieldDesc="合同净值_合同币"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_kind" ErpTable="cb_SubContract" ErpField="HtKind" ErpFieldDesc="合同细类"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_kind_guid" ErpTable="cb_SubContract" ErpField="HtKindGUID" ErpFieldDesc="合同细类主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bf_provider_guids" ErpTable="cb_SubContract" ErpField="BfProviderGUIDs" ErpFieldDesc="丙方单位"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bf_provider_names" ErpTable="cb_SubContract" ErpField="BfProviderNames" ErpFieldDesc="丙方单位名称"/>
+        <!--以下为扩展备用字段-->
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="projguid" ErpTable="cb_SubContract" ErpField="ProjGUID" ErpFieldDesc="项目GUID"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_amount" ErpTable="cb_SubContract" ErpField="AdjustAmount" ErpType="money" ErpFieldDesc="调整后合同净值"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_amount_bz" ErpTable="cb_SubContract" ErpField="AdjustAmount_Bz" ErpType="money" ErpFieldDesc="调整后合同净值_合同币"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_amount_non_tax" ErpTable="cb_SubContract" ErpField="AdjustAmount_NonTax" ErpType="money" ErpFieldDesc="调整后合同净值不含税"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_total_amount_bz" ErpTable="cb_SubContract" ErpField="AdjustTotalAmount_Bz" ErpType="money" ErpFieldDesc="调整后合同总金额_合同币"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bc_contract_amount" ErpTable="cb_SubContract" ErpField="BcContractAmount" ErpType="money" ErpFieldDesc="补充合同净值_含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bc_contract_amount_bz" ErpTable="cb_SubContract" ErpField="BcContractAmountBz" ErpType="money" ErpFieldDesc="补充合同净值（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bc_contract_amount_non_tax" ErpTable="cb_SubContract" ErpField="BcContractAmountNonTax" ErpType="money" ErpFieldDesc="补充合同净值_不含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount_input_tax" ErpTable="cb_SubContract" ErpField="HtAmount_InputTax" ErpType="money" ErpFieldDesc="合同净值进项税额"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount_non_tax" ErpTable="cb_SubContract" ErpField="HtAmount_NonTax" ErpType="money" ErpFieldDesc="合同净值_不含税"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_overall_contract" ErpTable="cb_SubContract" ErpField="IsOverallContract" ErpFieldDesc="是否总承包合同"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sub_contract_amount" ErpTable="cb_SubContract" ErpField="SubContractAmount" ErpType="money" ErpFieldDesc="分包合同净值_含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sub_contract_amount_bz" ErpTable="cb_SubContract" ErpField="SubContractAmountBz" ErpType="money" ErpFieldDesc="分包合同净值（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sub_contract_amount_non_tax" ErpTable="cb_SubContract" ErpField="SubContractAmountNonTax" ErpType="money" ErpFieldDesc="分包合同净值_不含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="item_amount" ErpTable="cb_SubContract" ErpField="ItemAmount" ErpType="money" ErpFieldDesc="甲供材金额"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_amount" ErpTable="cb_SubContract" ErpField="TotalAmount" ErpType="money" ErpFieldDesc="合同金额"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_apply_amount_bz" ErpTable="cb_SubContract" ErpField="TotalApplyAmount_Bz" ErpType="money" ErpFieldDesc="累计申请金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_deduct_amount_bz" ErpTable="cb_SubContract" ErpField="TotalDeductAmount_Bz" ErpType="money" ErpFieldDesc="累计应扣金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_deducted_amount_bz" ErpTable="cb_SubContract" ErpField="TotalDeductedAmount_Bz" ErpType="money" ErpFieldDesc="累计已扣金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_pay_amount" ErpTable="cb_SubContract" ErpField="TotalPayAmount" ErpType="money" ErpFieldDesc="累计实付金额（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_pay_amount_bz" ErpTable="cb_SubContract" ErpField="TotalPayAmount_Bz" ErpType="money" ErpFieldDesc="累计实付金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_plan_amount_bz" ErpTable="cb_SubContract" ErpField="TotalPlanAmount_Bz" ErpType="money" ErpFieldDesc="已编制付款计划金额（原币）"/>
+        <!--甲指分包与应付进度框 -->
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_sub_contract" ErpTable="cb_SubContract" ErpField="IsSubContract" ErpFieldDesc="是否甲指分包合同"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="master_contract_guid" ErpTable="cb_SubContract" ErpField="MasterContractGUID" ErpFieldDesc="甲指分包合同对应的总包合同"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_enable_progress_payment" ErpTable="cb_SubContract" ErpField="IsEnableProgressPayment" ErpFieldDesc="应付进度款标记"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetContract" ErpApiName="GetContract" ErpApiDesc="获取erp合同">
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="contract_guid" ErpTable="cb_Contract" ErpField="ContractGUID" ErpFieldDesc="合同主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="buguid" ErpTable="cb_Contract" ErpField="BUGUID" ErpFieldDesc="组织架构主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="contract_code" ErpTable="cb_Contract" ErpField="ContractCode" ErpFieldDesc="合同编码"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="contract_name" ErpTable="cb_Contract" ErpField="ContractName" ErpFieldDesc="合同名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="project_guid_list" ErpTable="cb_Contract" ErpField="ProjectGUIDList" ErpFieldDesc="项目主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="project_name_list" ErpTable="cb_Contract" ErpField="ProjectNameList" ErpFieldDesc="项目名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="yf_provider_guid" ErpTable="cb_Contract" ErpField="YfProviderGUID" ErpFieldDesc="乙方主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="yf_provider_name" ErpTable="cb_Contract" ErpField="YfProviderName" ErpFieldDesc="乙方名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="jf_provider_guid" ErpTable="cb_Contract" ErpField="JfProviderGUID" ErpFieldDesc="甲方主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="jf_provider_name" ErpTable="cb_Contract" ErpField="JfProviderName" ErpFieldDesc="甲方名称"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="js_state" ErpTable="cb_Contract" ErpField="JsState" ErpFieldDesc="合同结算状态"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sign_date" ErpTable="cb_Contract" ErpField="SignDate" ErpFieldDesc="签约日期"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount" ErpTable="cb_Contract" ErpField="HtAmount" ErpFieldDesc="合同净值"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount_bz" ErpTable="cb_Contract" ErpField="HtAmount_Bz" ErpFieldDesc="合同净值_合同币"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_kind" ErpTable="cb_Contract" ErpField="HtKind" ErpFieldDesc="合同细类"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_kind_guid" ErpTable="cb_Contract" ErpField="HtKindGUID" ErpFieldDesc="合同细类主键Guid"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bf_provider_guids" ErpTable="cb_Contract" ErpField="BfProviderGUIDs" ErpFieldDesc="丙方单位"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bf_provider_names" ErpTable="cb_Contract" ErpField="BfProviderNames" ErpFieldDesc="丙方单位名称"/>
+        <!--以下为扩展备用字段-->
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="projguid" ErpTable="cb_Contract" ErpField="ProjGUID" ErpFieldDesc="项目GUID"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_amount" ErpTable="cb_Contract" ErpField="AdjustAmount" ErpType="money" ErpFieldDesc="调整后合同净值"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_amount_bz" ErpTable="cb_Contract" ErpField="AdjustAmount_Bz" ErpType="money" ErpFieldDesc="调整后合同净值_合同币"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_amount_non_tax" ErpTable="cb_Contract" ErpField="AdjustAmount_NonTax" ErpType="money" ErpFieldDesc="调整后合同净值不含税"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ajust_total_amount_bz" ErpTable="cb_Contract" ErpField="AdjustTotalAmount_Bz" ErpType="money" ErpFieldDesc="调整后合同总金额_合同币"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bc_contract_amount" ErpTable="cb_Contract" ErpField="BcContractAmount" ErpType="money" ErpFieldDesc="补充合同净值_含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bc_contract_amount_bz" ErpTable="cb_Contract" ErpField="BcContractAmountBz" ErpType="money" ErpFieldDesc="补充合同净值（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="bc_contract_amount_non_tax" ErpTable="cb_Contract" ErpField="BcContractAmountNonTax" ErpType="money" ErpFieldDesc="补充合同净值_不含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount_input_tax" ErpTable="cb_Contract" ErpField="HtAmount_InputTax" ErpType="money" ErpFieldDesc="合同净值进项税额"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="ht_amount_non_tax" ErpTable="cb_Contract" ErpField="HtAmount_NonTax" ErpType="money" ErpFieldDesc="合同净值_不含税"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_overall_contract" ErpTable="cb_Contract" ErpField="IsOverallContract" ErpFieldDesc="是否总承包合同"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sub_contract_amount" ErpTable="cb_Contract" ErpField="SubContractAmount" ErpType="money" ErpFieldDesc="分包合同净值_含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sub_contract_amount_bz" ErpTable="cb_Contract" ErpField="SubContractAmountBz" ErpType="money" ErpFieldDesc="分包合同净值（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="sub_contract_amount_non_tax" ErpTable="cb_Contract" ErpField="SubContractAmountNonTax" ErpType="money" ErpFieldDesc="分包合同净值_不含税（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="item_amount" ErpTable="cb_Contract" ErpField="ItemAmount" ErpType="money" ErpFieldDesc="甲供材金额"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_amount" ErpTable="cb_Contract" ErpField="TotalAmount" ErpType="money" ErpFieldDesc="合同金额"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_apply_amount_bz" ErpTable="cb_Contract" ErpField="TotalApplyAmount_Bz" ErpType="money" ErpFieldDesc="累计申请金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_deduct_amount_bz" ErpTable="cb_Contract" ErpField="TotalDeductAmount_Bz" ErpType="money" ErpFieldDesc="累计应扣金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_deducted_amount_bz" ErpTable="cb_Contract" ErpField="TotalDeductedAmount_Bz" ErpType="money" ErpFieldDesc="累计已扣金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_pay_amount" ErpTable="cb_Contract" ErpField="TotalPayAmount" ErpType="money" ErpFieldDesc="累计实付金额（本位币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_pay_amount_bz" ErpTable="cb_Contract" ErpField="TotalPayAmount_Bz" ErpType="money" ErpFieldDesc="累计实付金额（原币）"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="total_plan_amount_bz" ErpTable="cb_Contract" ErpField="TotalPlanAmount_Bz" ErpType="money" ErpFieldDesc="已编制付款计划金额（原币）"/>
+        <!--甲指分包与应付进度框 -->
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_sub_contract" ErpTable="cb_Contract" ErpField="IsSubContract" ErpFieldDesc="是否甲指分包合同"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="master_contract_guid" ErpTable="cb_Contract" ErpField="MasterContractGUID" ErpFieldDesc="甲指分包合同对应的总包合同"/>
+        <Attribute ScrmTable="erp_xcb_contract" ScrmField="is_enable_progress_payment" ErpTable="cb_Contract" ErpField="IsEnableProgressPayment" ErpFieldDesc="应付进度款标记"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetLocalAlter" ErpApiName="GetLocalAlter" ErpApiDesc="获取工联单">
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_worksheet_id" ErpTable="cb_LocaleAlter" ErpField="HTAlterGUID" ErpFieldDesc="主键Guid"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_jb_dept_name" ErpTable="cb_LocaleAlter" ErpField="JbDeptName" ErpFieldDesc="经办部门"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="ws_code" ErpTable="cb_LocaleAlter" ErpField="AlterCode" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_refused_reason" ErpTable="cb_LocaleAlter" ErpField="YdgcxtCancelReason" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="change_overview" ErpTable="cb_LocaleAlter" ErpField="AlterName" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="description" ErpTable="cb_LocaleAlter" ErpField="Remarks" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="change_type" ErpTable="cb_LocaleAlter" ErpField="AlterType" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="change_reason" ErpTable="cb_LocaleAlter" ErpField="AlterReason" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="major" ErpTable="cb_LocaleAlter" ErpField="InvolveMajors" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_estimated_cost" ErpTable="cb_LocaleAlter" ErpField="ApplyAmount" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="reviewed_cost" ErpTable="cb_LocaleAlter" ErpField="AlterAmount" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_change_type" ErpTable="cb_LocaleAlter" ErpField="ERPAlterType" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="yf_provider_guid" ErpTable="cb_LocaleAlter" ErpField="YfProviderGUIDs" ErpFieldDesc="乙方单位"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="yf_provider_name" ErpTable="cb_LocaleAlter" ErpField="YfProviderNames" ErpFieldDesc="乙方单位"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetDesignAlter" ErpApiName="GetDesignAlter" ErpApiDesc="获取工联单">
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_worksheet_id" ErpTable="cb_LocaleAlter" ErpField="HTAlterGUID" ErpFieldDesc="主键Guid"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_jb_dept_name" ErpTable="cb_LocaleAlter" ErpField="JbDeptName" ErpFieldDesc="经办部门"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="ws_code" ErpTable="cb_LocaleAlter" ErpField="AlterCode" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_refused_reason" ErpTable="cb_LocaleAlter" ErpField="YdgcxtCancelReason" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="change_overview" ErpTable="cb_LocaleAlter" ErpField="AlterName" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="description" ErpTable="cb_LocaleAlter" ErpField="Remarks" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="change_type" ErpTable="cb_LocaleAlter" ErpField="AlterType" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="change_reason" ErpTable="cb_LocaleAlter" ErpField="AlterReason" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="major" ErpTable="cb_LocaleAlter" ErpField="InvolveMajors" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_estimated_cost" ErpTable="cb_LocaleAlter" ErpField="ApplyAmount" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="reviewed_cost" ErpTable="cb_LocaleAlter" ErpField="AlterAmount" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_change_type" ErpTable="cb_LocaleAlter" ErpField="ERPAlterType" ErpFieldDesc="变更编号"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="yf_provider_guid" ErpTable="cb_LocaleAlter" ErpField="YfProviderGUIDs" ErpFieldDesc="乙方单位"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="yf_provider_name" ErpTable="cb_LocaleAlter" ErpField="YfProviderNames" ErpFieldDesc="乙方单位"/>
+    </ServiceConfig>
+    <!-- 确认完工单 -->
+    <ServiceConfig ServiceName="GetLocalAlterItemConfirm" ErpApiName="GetLocalAlterItemConfirm" ErpApiDesc="获取确认完工">
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="erp_worksheet_id" ErpTable="cb_LocaleAlterItemConfirm" ErpField="HTAlterGUID" ErpFieldDesc="确认完工主键Guid"/>
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="pre_confirmsheet_change_overview" ErpTable="cb_LocaleAlterItemConfirm" ErpField="AlterItemConfirmName" ErpFieldDesc="完工确认名称"/>
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="erp_refused_reason" ErpTable="cb_LocaleAlterItemConfirm" ErpField="YdgcxtCancelReason" ErpFieldDesc="打回原因"/>
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="ws_code" ErpTable="cb_LocaleAlterItemConfirm" ErpField="AlterItemConfirmCode" ErpFieldDesc="事项编号"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetDesignAlterItemConfirm" ErpApiName="GetDesignAlterItemConfirm" ErpApiDesc="获取确认完工">
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="erp_worksheet_id" ErpTable="cb_designalteritemconfirm" ErpField="HTAlterGUID" ErpFieldDesc="确认完工主键Guid"/>
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="pre_confirmsheet_change_overview" ErpTable="cb_designalteritemconfirm" ErpField="AlterItemConfirmName" ErpFieldDesc="完工确认名称"/>
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="erp_refused_reason" ErpTable="cb_designalteritemconfirm" ErpField="YdgcxtCancelReason" ErpFieldDesc="打回原因"/>
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="ws_code" ErpTable="cb_designalteritemconfirm" ErpField="AlterItemConfirmCode" ErpFieldDesc="事项编号"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetConfirmCompleteFromErp" ErpApiName="GetConfirmCompleteFromErp" ErpApiDesc="获取确认完工">
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_LocaleAlterItemConfirm" ErpField="YdgcxtStatus" ErpApiDesc="工联单（设计变更 现场签证）拉取状态到工程协同端"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_DesignAlterItemConfirm" ErpField="YdgcxtStatus"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_LocaleAlterItemConfirm" ErpField="YdgcxtCancelReason" ErpApiDesc="打回原因"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_DesignAlterItemConfirm" ErpField="YdgcxtCancelReason"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_LocaleAlterItemConfirm" ErpField="AlterItemConfirmCode" ErpApiDesc="完工事项编号"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_DesignAlterItemConfirm" ErpField="AlterItemConfirmCode"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetLocalAlterFromErp" ErpApiName="GetLocalAlterFromErp" ErpApiDesc="获取工联单">
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_LocaleAlterApply" ErpField="YdgcxtStatus" ErpApiDesc="工联单（设计变更 现场签证）拉取状态到工程协同端"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_DesignAlterApply" ErpField="YdgcxtStatus"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_LocaleAlterApply" ErpField="YdgcxtCancelReason" ErpApiDesc="打回原因"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_DesignAlterApply" ErpField="YdgcxtCancelReason"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_LocaleAlterApply" ErpField="YfProviderGUIDs" ErpApiDesc="乙方单位"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_LocaleAlterApply" ErpField="YfProviderNames"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_DesignAlterApply" ErpField="YfProviderGUIDs" ErpApiDesc="乙方单位"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_DesignAlterApply" ErpField="YfProviderNames"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetLocalAlterConfirm" ErpApiName="GetLocalAlterConfirm" ErpApiDesc="获取完工单">
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="erp_worksheet_id" ErpTable="cb_LocaleAlterCostConfirm" ErpField="HTAlterGUID" ErpFieldDesc="主键Guid"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="reviewed_cost" ErpTable="cb_LocaleAlterCostConfirm" ErpField="QRAlterAmount" ErpFieldDesc="完工确认审核金额"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="erp_refused_reason" ErpTable="cb_LocaleAlterCostConfirm" ErpField="YdgcxtCancelReason" ErpFieldDesc="完工确认审核金额"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="description" ErpTable="cb_LocaleAlterCostConfirm" ErpField="QrRemarks" ErpFieldDesc="描述"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="erp_declaration_cost" ErpTable="cb_LocaleAlterCostConfirm" ErpField="QrApplyAmount" ErpFieldDesc="描述"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetDesignAlterConfirm" ErpApiName="GetDesignAlterConfirm" ErpApiDesc="获取完工单">
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="erp_worksheet_id" ErpTable="cb_LocaleAlterCostConfirm" ErpField="HTAlterGUID" ErpFieldDesc="主键Guid"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="reviewed_cost" ErpTable="cb_LocaleAlterCostConfirm" ErpField="QRAlterAmount" ErpFieldDesc="完工确认审核金额"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="erp_refused_reason" ErpTable="cb_LocaleAlterCostConfirm" ErpField="YdgcxtCancelReason" ErpFieldDesc="完工确认审核金额"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="description" ErpTable="cb_LocaleAlterCostConfirm" ErpField="QrRemarks" ErpFieldDesc="描述"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="erp_declaration_cost" ErpTable="cb_LocaleAlterCostConfirm" ErpField="QrApplyAmount" ErpFieldDesc="描述"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetAlterConfirmFromErp" ErpApiName="GetAlterConfirmFromErp" ErpApiDesc="获取完工单">
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_LocaleAlterCostConfirm" ErpField="YdgcxtStatus" ErpApiDesc="完工单（设计变更 现场签证）拉取状态到工程协同端"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_DesignAlterCostConfirm" ErpField="YdgcxtStatus"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_LocaleAlterCostConfirm" ErpField="YdgcxtCancelReason" ErpApiDesc="打回原因"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_DesignAlterCostConfirm" ErpField="YdgcxtCancelReason" ErpApiDesc="打回原因"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="SaveWorkSheet" ErpApiName="SaveWorkSheet" ErpApiDesc="保存工联单">
+        <Attribute ScrmTable="qz_worksheet" ScrmField="change_overview" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="AlterName" ErpFieldDesc="变更名称"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="description" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="Remarks" ErpFieldDesc="变更说明"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="estimated_cost" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="YdgcxtApplyAmount" ErpType="money" ErpFieldDesc="现场申请金额"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_change_type" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="AlterType" ErpFieldDesc="变更类型"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="change_reason" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="AlterReason" ErpFieldDesc="变更原因"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="major" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="InvolveMajors" ErpFieldDesc="涉及专业"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="now_date" ScrmExpression="curdate() as now_date" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="ReportDate" ErpFieldDesc="申请日期"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="approve_amount" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="YdgcxtAmount" ErpFieldDesc="现场审核金额"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="ydgcxtstatus" ScrmExpression="2 as ydgcxtstatus" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="YdgcxtStatusEnum" ErpApiDesc="工联单（设计变更 现场签证）签发工联单同步移动工程协同状态"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="yf_provider_guid" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="YfProviderGUIDs" ErpFieldDesc="乙方单位guid"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="yf_provider_name" ErpTable="cb_LocaleAlterApply,cb_DesignAlterApply" ErpField="YfProviderNames" ErpFieldDesc="乙方单位名称"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="SavePreConfirmSheet" ErpApiName="SavePreConfirmSheet" ErpApiDesc="保存确认完工单">
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="ydgcxtstatus" ScrmExpression="2 as `ydgcxtstatus`" ErpTable="cb_localealteritemconfirm,cb_designalteritemconfirm" ErpField="YdgcxtStatusEnum" ErpFieldDesc="移动工程协同审批状态"/>
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="pre_confirmsheet_change_overview" ErpTable="cb_localealteritemconfirm,cb_designalteritemconfirm" ErpField="AlterItemConfirmName" ErpFieldDesc="完工确认名称"/>
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="description" ErpTable="cb_localealteritemconfirm,cb_designalteritemconfirm" ErpField="Remark" ErpFieldDesc="完工说明"/>
+        <Attribute ScrmTable="qz_pre_confirmsheet" ScrmField="completion_date" ErpTable="cb_localealteritemconfirm,cb_designalteritemconfirm" ErpField="SignDate" ErpFieldDesc="完工日期"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="UpdateConfirmSheet" ErpApiName="UpdateConfirmSheet" ErpApiDesc="保存完工单">
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="LocaleAlterZjspName" ScrmExpression=" custom_20 as LocaleAlterZjspName" ErpTable="cb_LocaleAlterCostConfirm" ErpField="LocaleAlterZjspName" ErpFieldDesc="预算审批名称"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="DesignAlterZjspName" ScrmExpression=" custom_20 as DesignAlterZjspName" ErpTable="cb_DesignAlterCostConfirm" ErpField="DesignAlterZjspName" ErpFieldDesc="预算审批名称"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="declaration_cost" ErpTable="cb_LocaleAlterCostConfirm,cb_DesignAlterCostConfirm" ErpField="YdgcxtApplyAmount" ErpFieldDesc="现场申请金额"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="now_date" ScrmExpression="curdate() as now_date" ErpTable="cb_LocaleAlterCostConfirm,cb_DesignAlterCostConfirm" ErpField="SignDate" ErpFieldDesc="经办日期"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="description" ErpTable="cb_LocaleAlterCostConfirm,cb_DesignAlterCostConfirm" ErpField="AlterContent" ErpFieldDesc="变更内容"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="approve_amount" ErpTable="cb_LocaleAlterCostConfirm,cb_DesignAlterCostConfirm" ErpField="YdgcxtAmount" ErpFieldDesc="现场审核金额"/>
+        <Attribute ScrmTable="qz_confirmsheet" ScrmField="ydgcxtstatus" ScrmExpression="2 as ydgcxtstatus" ErpTable="cb_LocaleAlterCostConfirm,cb_DesignAlterCostConfirm" ErpField="YdgcxtStatusEnum" ErpApiDesc="完工单（设计变更 现场签证）签发工联单同步移动工程协同状态"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="SaveContractPayment" ErpApiName="SaveContractPayment" ErpApiDesc="保存付款申请">
+        <Attribute ScrmTable="qz_payment" ScrmField="subject" ErpTable="cb_HTFKApply" ErpField="Subject" ErpFieldDesc="付款申请主题"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="fund_name" ScrmExpression="CONCAT(fund_type,'-',fund_name) as fund_name" ErpTable="cb_HTFKApply" ErpField="FundName" ErpFieldDesc="款项类型和名称"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="apply_amount" ErpTable="cb_HTFKApply" ErpField="YdgcxtYFApplyAmount" ErpType="money" ErpFieldDesc="乙方申请金额"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="fq_date" ErpTable="cb_HTFKApply" ErpField="ApplyDate" ErpFieldDesc="申请付款日期"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="description" ErpTable="cb_HTFKApply" ErpField="ApplyRemarks" ErpFieldDesc="付款说明"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="ydgcxtstatus" ScrmExpression="2 as ydgcxtstatus" ErpTable="cb_HTFKApply" ErpField="YdgcxtStatusEnum" ErpApiDesc="付款申请-同步移动工程协同状态YdgcxtStatusEnum为已审核"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetHTFKApply" ErpApiName="GetHTFKApply" ErpApiDesc="获取付款申请">
+        <Attribute ScrmTable="qz_payment" ScrmField="erp_apply_id" ErpTable="cb_HTFKApply" ErpField="HTFKApplyGUID" ErpFieldDesc="付款申请主键Guid"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="subject" ErpTable="cb_HTFKApply" ErpField="Subject" ErpFieldDesc="付款申请主题"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="description" ErpTable="cb_HTFKApply" ErpField="ApplyRemarks" ErpFieldDesc="付款说明"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="apply_code" ErpTable="cb_HTFKApply" ErpField="ApplyCode" ErpFieldDesc="申请编号"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="pay_provider_name" ErpTable="cb_HTFKApply" ErpField="PayProviderName" ErpFieldDesc="付款单位名称"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="fund_type" ErpTable="cb_HTFKApply" ErpField="FundType" ErpFieldDesc="款项类型"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="fund_name" ErpTable="cb_HTFKApply" ErpField="FundName" ErpFieldDesc="款项名称"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="bank_name" ErpTable="cb_HTFKApply" ErpField="BankName" ErpFieldDesc="开户银行"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="bank_accounts" ErpTable="cb_HTFKApply" ErpField="BankAccounts" ErpFieldDesc="银行账户"/>
+        <!-- SaasERP  协同申请金额+ERP申请金额通过付款明细计算，所以不需要同步，避免出现覆盖的情况
+        <Attribute ScrmTable="qz_payment" ScrmField="apply_amount" ErpTable="cb_HTFKApply" ErpField="ApplyAmount" ErpFieldDesc="申请金额_人民币"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="erp_apply_amount" ErpTable="cb_HTFKApply" ErpField="ErpApplyAmount" ErpFieldDesc="内部申报金额_人民币"/>
+        -->
+        <Attribute ScrmTable="qz_payment" ScrmField="erp_refused_reason" ErpTable="cb_HTFKApply" ErpField="YdgcxtCancelReason" ErpFieldDesc="打回原因"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="receive_provider_guid" ErpTable="cb_HTFKApply" ErpField="ReceiveProviderGUID" ErpFieldDesc="收款单位GUID"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="receive_provider_name" ErpTable="cb_HTFKApply" ErpField="ReceiveProviderName" ErpFieldDesc="收款单位名称"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="yf_provider_guid" ErpTable="cb_HTFKApply" ErpField="YfProviderGUIDs" ErpFieldDesc="乙方单位Guid"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="yf_provider_name" ErpTable="cb_HTFKApply" ErpField="YfProviderNames" ErpFieldDesc="乙方单位"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetHTFKApplyFromErp" ErpApiName="GetHTFKApplyFromErp" ErpApiDesc="获取付款申请">
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_HTFKApply" ErpField="YdgcxtStatus" ErpApiDesc="付款申请单拉取状态到工程协同端"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_HTFKApply" ErpField="YdgcxtCancelReason" ErpApiDesc="付款申请单拉取状态到工程协同端"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="SaveHTBalance" ErpApiName="SaveHTBalance" ErpApiDesc="保存合同结算">
+        <Attribute ScrmTable="qz_settlement" ScrmField="settlement_type" ErpTable="cb_HTBalance" ErpField="BalanceType" ErpFieldDesc="结算类型"/>
+        <Attribute ScrmTable="qz_settlement" ScrmField="sgdwsbj_amount" ErpTable="cb_HTBalance" ErpField="ContractingUnitAmount" ErpType="money" ErpFieldDesc="施工单位申报金额（即承包单位申报金额）"/>
+        <!-- <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_1" ErpTable="cb_HTBalance" ErpField="BalanceName" ErpFieldDesc="结算名称"/> -->
+        <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_1" ErpTable="cb_HTBalance" ErpField="BalanceDate" ErpFieldDesc="完工日期"/>
+        <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_2" ErpTable="cb_HTBalance" ErpField="Content" ErpFieldDesc="结算内容"/>
+        <Attribute ScrmTable="qz_settlement" ScrmField="sgdwsbj_zx" ErpTable="cb_HTBalance" ErpField="AdvisoryUnitAmount" ErpType="money" ErpFieldDesc="咨询单位审核金额"/>
+        <Attribute ScrmTable="qz_settlement" ScrmField="ydgcxtstatus" ScrmExpression="2 as `ydgcxtstatus`" ErpTable="cb_HTBalance" ErpField="YdgcxtStatusEnum" ErpFieldDesc="同步移动工程协同状态YdgcxtStatusEnum为已审核"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetHTBalance" ErpApiName="GetHTBalance" ErpApiDesc="拉取合同结算">
+        <Attribute ScrmTable="qz_settlement" ScrmField="erp_ht_balance_guid" ErpTable="cb_HTBalance" ErpField="HTBalanceGUID" ErpFieldDesc="结算guid"/>
+        <Attribute ScrmTable="qz_settlement" ScrmField="settlement_type" ErpTable="cb_HTBalance" ErpField="BalanceType" ErpFieldDesc="结算类型"/>
+        <Attribute ScrmTable="qz_settlement" ScrmField="sgdwsbj_amount" ErpTable="cb_HTBalance" ErpField="ContractingUnitAmount" ErpType="money" ErpFieldDesc="施工单位申报金额（即承包单位申报金额）"/>
+        <!-- <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_1" ErpTable="cb_HTBalance" ErpField="BalanceName" ErpFieldDesc="结算名称"/> -->
+        <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_1" ErpTable="cb_HTBalance" ErpField="BalanceDate" ErpFieldDesc="完工日期"/>
+        <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_2" ErpTable="cb_HTBalance" ErpField="Content" ErpFieldDesc="结算内容"/>
+        <Attribute ScrmTable="qz_settlement" ScrmField="sgdwsbj_zx" ErpTable="cb_HTBalance" ErpField="AdvisoryUnitAmount" ErpType="money" ErpFieldDesc="咨询单位审核金额"/>
+        <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_3" ErpTable="cb_HTBalance" ErpField="HjjeAB" ErpType="money" ErpFieldDesc="核减金额(A-B)"/>
+        <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_4" ErpTable="cb_HTBalance" ErpField="ConstructionUnitAmount" ErpType="money" ErpFieldDesc="建设单位审核金额"/>
+        <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_5" ErpTable="cb_HTBalance" ErpField="HjjeAC" ErpType="money" ErpFieldDesc="核减金额(A-C)"/>
+        <Attribute ScrmTable="qz_settlement" ScrmField="bx_amount" ErpTable="cb_HTBalance" ErpField="BxAmount" ErpType="money" ErpFieldDesc="保修金额"/>
+        <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_6" ErpTable="cb_HTBalance" ErpField="BxPercent" ErpType="money" ErpFieldDesc="保修比例(E)"/>
+        <Attribute ScrmTable="qz_biz_custom" ScrmField="custom_7" ErpTable="cb_HTBalance" ErpField="DeductAmount" ErpType="money" ErpFieldDesc="合同扣款金额(G)"/>
+        <Attribute ScrmTable="qz_biz_custom" ScrmField="erp_refused_reason" ErpTable="cb_HTBalance" ErpField="YdgcxtCancelReason" ErpFieldDesc="打回原因"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetHTBalanceFromErp" ErpApiName="GetHTBalanceFromErp" ErpApiDesc="获取合同结算">
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_HTBalance" ErpField="YdgcxtStatus" ErpFieldDesc="工程协同状态"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_HTBalance" ErpField="YdgcxtCancelReason" ErpApiDesc="打回原因"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="SaveOutputValue" ErpApiName="UpErpSaveHtSchedule" ErpApiDesc="保存产值申报">
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_apply_amount" ErpTable="cb_ProgressPayment" ErpField="PreTotalReportOutputValue_Bz" ErpFieldDesc="截止上期上报产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="change_overview" ErpTable="cb_ProgressPayment" ErpField="Subject" ErpFieldDesc="主题"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="yf_provider_guid" ErpTable="cb_ProgressPayment" ErpField="ProviderGUID" ErpFieldDesc="乙方单位"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="yf_provider_name" ErpTable="cb_ProgressPayment" ErpField="ProviderName" ErpFieldDesc="乙方单位"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="perform_remarks" ErpTable="cb_ProgressPayment" ErpField="ProgressRemark" ErpFieldDesc="工程进度说明"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="term_remarks" ErpTable="cb_ProgressPayment" ErpField="TermRemarks" ErpFieldDesc="合同相关条款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="apply_amount" ErpTable="cb_ProgressPayment" ErpField="ReportOutputValue" ErpFieldDesc="本次上报产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="apply_amount1" ScrmExpression="apply_amount as apply_amount1" ErpTable="cb_ProgressPayment" ErpField="ReportOutputValue_Bz" ErpFieldDesc="本次上报产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="fq_date" ErpTable="cb_ProgressPayment" ErpField="ApplyDate" ErpFieldDesc="申请日期"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_pay_rate" ErpTable="cb_ProgressPayment" ErpField="PayRate" ErpFieldDesc="基于累计产值支付比例"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="approve_outputvalue"  ScrmExpression="if(IFNULL(approve_outputvalue,'')='',apply_amount,approve_outputvalue) as approve_outputvalue"  ErpTable="cb_ProgressPayment" ErpField="ApproveOutputValue_Bz" ErpFieldDesc="本次审定产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="approve_outputvalue1"  ScrmExpression="if(IFNULL(approve_outputvalue,'')='',apply_amount,approve_outputvalue) as approve_outputvalue1"  ErpTable="cb_ProgressPayment" ErpField="ApproveOutputValue" ErpFieldDesc="本次审定产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="apply_progress_amount" ErpTable="cb_ProgressPayment" ErpField="ApplyYfProgressAmount_Bz" ErpFieldDesc="本次上报应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="apply_progress_amount1" ScrmExpression = "apply_progress_amount as apply_progress_amount1" ErpTable="cb_ProgressPayment" ErpField="ApplyYfProgressAmount" ErpFieldDesc="本次上报应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="approval_progress_amount" ScrmExpression="if(IFNULL(approval_progress_amount,'')='',apply_progress_amount,approval_progress_amount) as approval_progress_amount"  ErpTable="cb_ProgressPayment" ErpField="YfProgressAmount_Bz" ErpFieldDesc="本次审定应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="approval_progress_amount1" ScrmExpression="if(IFNULL(approval_progress_amount,'')='',apply_progress_amount,approval_progress_amount) as approval_progress_amount1"  ErpTable="cb_ProgressPayment" ErpField="YfProgressAmount" ErpFieldDesc="本次审定应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="approve_outputvalue" ScrmExpression="if(IFNULL(approve_outputvalue,'')='',TRUNCATE(apply_amount,2),TRUNCATE(approve_outputvalue,2)) as approve_outputvalue" ErpTable="cb_ProgressPayment" ErpField="LocaleApproveOutputValue_Bz" ErpFieldDesc="现场审核产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="approve_outputvalue1" ScrmExpression="if(IFNULL(approve_outputvalue,'')='',TRUNCATE(apply_amount,2),TRUNCATE(approve_outputvalue,2)) as approve_outputvalue1" ErpTable="cb_ProgressPayment" ErpField="LocaleApproveOutputValueBz" ErpFieldDesc="现场审核产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_approve_output_value_bz" ScrmExpression="if(IFNULL(total_approve_output_value_bz,'')='',0,total_approve_output_value_bz) as total_approve_output_value_bz" ErpTable="cb_ProgressPayment" ErpField="PreTotalOutputValue_Bz" ErpFieldDesc="截止至上期累计产值（A）"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="pre_total_yf_progress_amount" ScrmExpression="if(IFNULL(pre_total_yf_progress_amount,'')='',0,pre_total_yf_progress_amount) as pre_total_yf_progress_amount" ErpTable="cb_ProgressPayment" ErpField="PreTotalYfProgressAmount_Bz" ErpFieldDesc="截止至上期累计应付进度款（B）"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_progress_deduct_bz" ScrmExpression="if(IFNULL(total_progress_deduct_bz,'')='',0,total_progress_deduct_bz) as total_progress_deduct_bz" ErpTable="cb_ProgressPayment" ErpField="TotalProgressDeduct_Bz" ErpFieldDesc="累计其他扣款（C）"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_report_output_value" ScrmExpression = "TRUNCATE(total_report_output_value,2) as total_report_output_value" ErpTable="cb_ProgressPayment" ErpField="TotalReportOutputValueBz" ErpFieldDesc="累计上报产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_apply_progress_amount" ScrmExpression = "TRUNCATE(total_apply_progress_amount,2) as total_apply_progress_amount" ErpTable="cb_ProgressPayment" ErpField="TotalProgressBz" ErpFieldDesc="累计上报应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField = "total_approve_outputvalue" ScrmExpression="if(IFNULL(total_approve_outputvalue,'')='',TRUNCATE(total_report_output_value,2),TRUNCATE(total_approve_outputvalue,2)) as total_approve_outputvalue" ErpTable="cb_ProgressPayment" ErpField="TotalApproveOutputValueBz" ErpFieldDesc="累计审定产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField = "total_approval_progress_amount" ScrmExpression=" if(IFNULL(total_approval_progress_amount,'')='',TRUNCATE(total_apply_progress_amount,2),TRUNCATE(total_approval_progress_amount,2)) as total_approval_progress_amount" ErpTable="cb_ProgressPayment" ErpField="TotalApprovalYfAmountBz" ErpFieldDesc="累计审定应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="ydgcxtstatus" ScrmExpression="2 as ydgcxtstatus" ErpTable="cb_ProgressPayment" ErpField="YdgcxtStatusEnum" ErpFieldDesc="同步移动工程协同状态YdgcxtStatusEnum为已审核"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetHTSchedule" ErpApiName="GetHTSchedule" ErpApiDesc="获取产值申报">
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="ws_code" ErpTable="cb_ProgressPayment" ErpField="ReportCode" ErpFieldDesc="编号"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_apply_amount" ErpTable="cb_ProgressPayment" ErpField="PreTotalReportOutputValue_Bz" ErpFieldDesc="截止上期上报产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="yf_provider_guid" ErpTable="cb_ProgressPayment" ErpField="ProviderGUID" ErpFieldDesc="乙方单位"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="yf_provider_name" ErpTable="cb_ProgressPayment" ErpField="ProviderName" ErpFieldDesc="乙方单位"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="change_overview" ErpTable="cb_ProgressPayment" ErpField="Subject" ErpFieldDesc="主题"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="fq_date" ErpTable="cb_ProgressPayment" ErpField="ApplyDate" ErpFieldDesc="申请日期"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="apply_amount" ErpTable="cb_ProgressPayment" ErpField="ReportOutputValue_Bz" ErpFieldDesc="本次上报产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="perform_remarks" ErpTable="cb_ProgressPayment" ErpField="ProgressRemark" ErpFieldDesc="工程进度说明"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="erp_ht_schedule_guid" ErpTable="cb_HTSchedule" ErpField="ProgressPaymentGUID" ErpFieldDesc="产值申报主键"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="term_remarks" ErpTable="cb_HTSchedule" ErpField="TermRemarks" ErpFieldDesc="合同相关条款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_report_output_value" ErpTable="cb_HTSchedule" ErpField="TotalReportOutputValue_Bz" ErpFieldDesc="累计上报产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_pay_rate" ErpTable="cb_HTSchedule" ErpField="PayRate" ErpFieldDesc="累计支付比例"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_apply_progress_amount" ErpTable="cb_HTSchedule" ErpField="TotalProgress_Bz" ErpFieldDesc="累计上报应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="apply_progress_amount" ErpTable="cb_HTSchedule" ErpField="ApplyYfProgressAmount_Bz" ErpFieldDesc="本次上报应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="approve_outputvalue" ErpTable="cb_HTSchedule" ErpField="ApproveAmount" ErpFieldDesc="本次审定产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_approve_outputvalue" ErpTable="cb_HTSchedule" ErpField="TotalApproveOutputValue_Bz" ErpFieldDesc="累计审定产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="approval_progress_amount" ErpTable="cb_HTSchedule" ErpField="YfProgressAmount_Bz" ErpFieldDesc="本次审定应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_approval_progress_amount" ErpTable="cb_HTSchedule" ErpField="TotalApprovalYfAmount_Bz" ErpFieldDesc="累计审定应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="deduct_amount" ErpTable="cb_HTSchedule" ErpField="DeductAmount_Bz" ErpFieldDesc="本次扣款金额"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="deduct_materiel_amount" ErpTable="cb_HTSchedule" ErpField="DeductMaterielAmount_Bz" ErpFieldDesc="本次抵扣备料款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_deducted_materiel_amount" ErpTable="cb_HTSchedule" ErpField="TotalDeductedMaterielAmount_Bz" ErpFieldDesc="截止至上期累计已抵备料款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="erp_refused_reason" ErpTable="cb_HTSchedule" ErpField="YdgcxtCancelReason" ErpFieldDesc="打回原因"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_approve_output_value_bz" ErpTable="cb_HTSchedule" ErpField="PreTotalOutputValue_Bz" ErpFieldDesc="截止至上期累计产值"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="pre_total_yf_progress_amount" ErpTable="cb_HTSchedule" ErpField="PreTotalYfProgressAmount_Bz" ErpFieldDesc="截止至上期累计应付进度款"/>
+        <Attribute ScrmTable="qz_outputvalue" ScrmField="total_progress_deduct_bz" ErpTable="cb_HTSchedule" ErpField="TotalProgressDeduct_Bz" ErpFieldDesc="截止至上期累计其他扣款"/>
+        <!-- <Attribute ScrmTable="qz_outputvalue" ScrmField="pre_total_output_value" ErpTable="cb_HTSchedule" ErpField="PreTotalOutputValue_Bz" ErpFieldDesc="截止至上期累计产值"/> -->
+        <!-- <Attribute ScrmTable="qz_outputvalue" ScrmField="pre_total_progress_amount" ErpTable="cb_HTSchedule" ErpField="PreTotalYfProgressAmount_Bz" ErpFieldDesc="截止至上期累计应付进度款"/> -->
+        <!-- <Attribute ScrmTable="qz_outputvalue" ScrmField="total_progress_deduct" ErpTable="cb_HTSchedule" ErpField="TotalProgressDeduct_Bz" ErpFieldDesc="截止至上期累计其他扣款"/> -->
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetHTScheduleFromErp" ErpApiName="GetHTScheduleFromErp" ErpApiDesc="获取产值申报">
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_ProgressPayment" ErpField="YdgcxtStatus" ErpFieldDesc="工程协同状态"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_ProgressPayment" ErpField="YdgcxtCancelReason" ErpApiDesc="打回原因"/>
+    </ServiceConfig>
+    <!--APP获取扣款管理字段-->
+    <ServiceConfig ServiceName="GetDeduct" ErpApiName="GetDeduct" ErpApiDesc="获取扣款管理"/>
+    <!--配置扣款管理扩展字段-->
+    <ServiceConfig ServiceName="GetDeductFromErp" ErpApiName="GetDeductFromErp" ErpApiDesc="获取扣款管理"/>
+    <!--APP获取扣款管理明细字段-->
+    <ServiceConfig ServiceName="GetDeductDtl" ErpApiName="GetDeductDtl" ErpApiDesc="获取扣款管理明细"/>
+    <!--配置扣款管理明细扩展字段-->
+    <ServiceConfig ServiceName="GetDeductDtlFromErp" ErpApiName="GetDeductDtlFromErp" ErpApiDesc="获取扣款管理明细"/>
+    <!--反签证保存 -->
+    <ServiceConfig ServiceName="SaveNegativeWorkSheet" ErpApiName="SaveNegativeWorkSheet" ErpApiDesc="保存反签证">
+        <Attribute ScrmTable="qz_negative_visa_itemlist" ScrmField="estimated_cost" ErpTable="cb_LocaleAlterApply" ErpField="YdgcxtApplyAmount" ErpFieldDesc="反签证现场申报金额"/>
+        <Attribute ScrmTable="qz_negative_visa_itemlist" ScrmField="approve_amount" ErpTable="cb_LocaleAlterApply" ErpField="YdgcxtAmount" ErpFieldDesc="反签证现场审核金额"/>
+        <Attribute ScrmTable="qz_negative_visa_itemlist" ScrmField="now_date" ScrmExpression="curdate() as now_date" ErpTable="cb_LocaleAlterApply" ErpField="ReportDate" ErpFieldDesc="反签证申请日期"/>
+    </ServiceConfig>
+    <!--反签证关联的正签证信息-->
+    <ServiceConfig ServiceName="SaveNegativeWorkSheet.SaveWorkSheet" ErpApiName="SaveNegativeWorkSheet.SaveWorkSheet" ErpApiDesc="反签证关联的正签证信息">
+        <Attribute ScrmTable="qz_worksheet" ScrmField="change_overview" ErpTable="cb_LocaleAlterApply" ErpField="AlterName" ErpFieldDesc="变更名称"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="erp_change_type" ErpTable="cb_LocaleAlterApply" ErpField="AlterType" ErpFieldDesc="变更类型"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="description" ErpTable="cb_LocaleAlterApply" ErpField="Remarks" ErpFieldDesc="变更说明"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="change_reason" ErpTable="cb_LocaleAlterApply" ErpField="AlterReason" ErpFieldDesc="变更原因"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="major" ErpTable="cb_LocaleAlterApply" ErpField="InvolveMajors" ErpFieldDesc="涉及专业"/>
+        <Attribute ScrmTable="qz_worksheet" ScrmField="ydgcxtstatus" ScrmExpression="2 as `ydgcxtstatus`" ErpTable="cb_LocaleAlterApply" ErpField="YdgcxtStatusEnum" ErpFieldDesc="移动工程协同审批状态"/>
+    </ServiceConfig>
+    <!-- 结算计划 -->
+    <ServiceConfig ServiceName="GetHtBalancePlanStatus" ErpApiName="GetHtBalancePlanStatus" ErpApiDesc="结算计划状态">
+        <Attribute ScrmTable="erp_cb_settlement_plan" ScrmField="erp_ht_balance_plan_guid" ErpTable="cb_HtBalancePlan" ErpField="HtBalancePlanGUID" ErpFieldDesc="计划ID"/>
+        <Attribute ScrmTable="erp_cb_settlement_plan" ScrmField="contract_guid" ErpTable="cb_HtBalancePlan" ErpField="ContractGUID" ErpFieldDesc="合同GUID"/>
+        <Attribute ScrmTable="erp_cb_settlement_plan" ScrmField="erp_check_status" ErpTable="cb_HtBalancePlan" ErpField="ApproveState" ErpFieldDesc="状态"/>
+    </ServiceConfig>
+    <!-- 获取核价单 -->
+    <ServiceConfig ServiceName="GetCheckList" ErpApiName="GetCheckList" ErpApiDesc="获取核价单">
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="erp_biz_guid" ErpTable="cb_MaterialPriceApply" ErpField="CheckListGUID" ErpFieldDesc="核价单主键Guid"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="ws_code" ErpTable="cb_MaterialPriceApply" ErpField="AlterCode" ErpFieldDesc="合同变更编码"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="apply_date" ErpTable="cb_MaterialPriceApply" ErpField="ReportDate" ErpFieldDesc="上报日期"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="biz_title" ErpTable="cb_MaterialPriceApply" ErpField="AlterName" ErpFieldDesc="上报日期"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="erp_estimated_cost" ErpTable="cb_MaterialPriceApply" ErpField="ApplyAmount" ErpFieldDesc="ERP申请金额"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="erp_reviewed_cost" ErpTable="cb_MaterialPriceApply" ErpField="AlterAmount" ErpFieldDesc="ERP审核金额"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="alter_type" ErpTable="cb_MaterialPriceApply" ErpField="AlterType" ErpFieldDesc="变更类型"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="alter_reason" ErpTable="cb_MaterialPriceApply" ErpField="AlterReason" ErpFieldDesc="变更原因"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="description" ErpTable="cb_MaterialPriceApply" ErpField="Remarks" ErpFieldDesc="详细内容"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="erp_refused_reason" ErpTable="cb_MaterialPriceApply" ErpField="YdgcxtCancelReason" ErpFieldDesc="打回原因"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetCheckListFromErp" ErpApiName="GetCheckListFromErp" ErpApiDesc="获取核价单">
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_MaterialPriceApply" ErpField="YdgcxtStatus" ErpFieldDesc="工程协同状态"/>
+        <Attribute ScrmTable="NULL" ScrmField="NULL" ErpTable="cb_MaterialPriceApply" ErpField="YdgcxtCancelReason" ErpFieldDesc="打回原因"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetHTAlterPricingDtl" ErpApiName="GetHTAlterPricingDtl" ErpApiDesc="获取核价单明细">
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_item_id" ErpTable="cb_MaterialDetail" ErpField="AlterPricingGuid" ErpFieldDesc="清单ERP_GUID"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="name" ErpTable="cb_MaterialDetail" ErpField="MaterialName" ErpFieldDesc="材料、设备名称"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_specs" ErpTable="cb_MaterialDetail" ErpField="Specification" ErpFieldDesc="规格型号 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_quantity" ErpTable="cb_MaterialDetail" ErpField="Quantity" ErpFieldDesc="数量"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_unit_price" ErpTable="cb_MaterialDetail" ErpField="Price" ErpType="money" ErpFieldDesc="单价"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_taxrate" ErpTable="cb_MaterialDetail" ErpField="TaxRate" ErpFieldDesc="税率 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_total" ErpTable="cb_MaterialDetail" ErpField="Total" ErpType="money" ErpFieldDesc="总价(含税)"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_totalnontax" ErpTable="cb_MaterialDetail" ErpField="TotalNonTax" ErpType="money" ErpFieldDesc="总价(不含税)"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_part" ErpTable="cb_MaterialDetail" ErpField="Part" ErpFieldDesc="使用分部 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_deliverytime" ErpTable="cb_MaterialDetail" ErpField="DeliveryTime" ErpFieldDesc="供货时间 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_brand" ErpTable="cb_MaterialDetail" ErpField="ProviderName" ErpFieldDesc="生产厂家、品牌 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_contactname" ErpTable="cb_MaterialDetail" ErpField="ContactName" ErpFieldDesc="联系人"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_contactnumber" ErpTable="cb_MaterialDetail" ErpField="ContactNumber" ErpFieldDesc="联系电话"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="unit_of_material" ErpTable="cb_MaterialDetail" ErpField="Unit" ErpFieldDesc="单位"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_remark" ErpTable="cb_MaterialDetail" ErpField="Remark" ErpFieldDesc="备注"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetHTAlterPricingDtlFromErp" ErpApiName="GetHTAlterPricingDtlFromErp" ErpApiDesc="获取核价单明细">
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="name" ErpTable="cb_MaterialDetail" ErpField="MaterialName" ErpFieldDesc="材料、设备名称"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_specs" ErpTable="cb_MaterialDetail" ErpField="Specification" ErpFieldDesc="规格型号 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_quantity" ErpTable="cb_MaterialDetail" ErpField="Quantity" ErpFieldDesc="数量"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_unit_price" ErpTable="cb_MaterialDetail" ErpField="Price" ErpType="money" ErpFieldDesc="单价"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_taxrate" ErpTable="cb_MaterialDetail" ErpField="TaxRate" ErpFieldDesc="税率 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_total" ErpTable="cb_MaterialDetail" ErpField="Total" ErpType="money" ErpFieldDesc="总价(含税)"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_totalnontax" ErpTable="cb_MaterialDetail" ErpField="TotalNonTax" ErpType="money" ErpFieldDesc="总价(不含税)"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_part" ErpTable="cb_MaterialDetail" ErpField="Part" ErpFieldDesc="使用分部 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_deliverytime" ErpTable="cb_MaterialDetail" ErpField="DeliveryTime" ErpFieldDesc="供货时间 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_brand" ErpTable="cb_MaterialDetail" ErpField="ProviderName" ErpFieldDesc="生产厂家、品牌 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_contactname" ErpTable="cb_MaterialDetail" ErpField="ContactName" ErpFieldDesc="联系人"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="unit_of_material" ErpTable="cb_MaterialDetail" ErpField="Unit" ErpFieldDesc="单位"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_contactnumber" ErpTable="cb_MaterialDetail" ErpField="ContactNumber" ErpFieldDesc="联系电话"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="erp_remark" ErpTable="cb_MaterialDetail" ErpField="Remark" ErpFieldDesc="备注"/>
+    </ServiceConfig>
+    <!-- 保存核价单 -->
+    <ServiceConfig ServiceName="SaveCheckList" ErpApiName="SaveCheckList" ErpApiDesc="保存核价单">
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="biz_title" ErpTable="cb_MaterialPriceApply" ErpField="AlterName" ErpFieldDesc="认质认价名称"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="description" ErpTable="cb_MaterialPriceApply" ErpField="Remarks" ErpFieldDesc="详细内容"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="alter_type" ErpTable="cb_MaterialPriceApply" ErpField="AlterType" ErpFieldDesc="变更类型"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="alter_reason" ErpTable="cb_MaterialPriceApply" ErpField="AlterReason" ErpFieldDesc="变更原因"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="estimated_cost" ErpTable="cb_MaterialPriceApply" ErpField="YdgcxtApplyAmount" ErpType="money" ErpFieldDesc="项目现场申报金额"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="reviewed_cost" ErpTable="cb_MaterialPriceApply" ErpField="YdgcxtAmount" ErpType="money" ErpFieldDesc="项目现场审核金额 "/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="apply_date" ErpTable="cb_MaterialPriceApply" ErpField="ReportDate" ErpFieldDesc="申请日期"/>
+        <Attribute ScrmTable="qz_price_sheet" ScrmField="ydgcxtstatus" ScrmExpression="2 as `ydgcxtstatus`" ErpTable="cb_MaterialPriceApply" ErpField="YdgcxtStatusEnum" ErpFieldDesc="移动工程协同审批状态"/>
+    </ServiceConfig>
+    <!-- 保存核价单-清单明细 -->
+    <ServiceConfig ServiceName="SaveCheckList.SavePricingDtl" ErpApiName="SaveCheckList.SavePricingDtl" ErpApiDesc="保存核价单-清单明细">
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="item_id" ErpTable="cb_MaterialDetail" ErpField="MaterialGUID" ErpFieldDesc="清单ID"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="name" ErpTable="cb_MaterialDetail" ErpField="MaterialName" ErpFieldDesc="材料、设备名称"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="specs" ErpTable="cb_MaterialDetail" ErpField="Specification" ErpFieldDesc="规格型号 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="quantity" ErpTable="cb_MaterialDetail" ErpField="Quantity" ErpFieldDesc="数量 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="unit_price" ErpTable="cb_MaterialDetail" ErpField="Price" ErpType="money" ErpFieldDesc="单价 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="taxrate" ErpTable="cb_MaterialDetail" ErpField="TaxRate" ErpFieldDesc="税率 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="total" ErpTable="cb_MaterialDetail" ErpField="Total" ErpType="money" ErpFieldDesc="总价(含税)"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="totalnontax" ErpTable="cb_MaterialDetail" ErpField="TotalNonTax" ErpType="money" ErpFieldDesc="总价(不含税)"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="unit_of_material" ErpTable="cb_MaterialDetail" ErpField="Unit" ErpFieldDesc="单位"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="part" ErpTable="cb_MaterialDetail" ErpField="Part" ErpFieldDesc="使用部位"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="deliverytime" ErpTable="cb_MaterialDetail" ErpField="DeliveryTime" ErpFieldDesc="供货时间 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="brand" ErpTable="cb_MaterialDetail" ErpField="ProviderName" ErpFieldDesc="生产厂家、品牌 "/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="contactname" ErpTable="cb_MaterialDetail" ErpField="ContactName" ErpFieldDesc="联系人"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="contactnumber" ErpTable="cb_MaterialDetail" ErpField="ContactNumber" ErpFieldDesc="联系电话"/>
+        <Attribute ScrmTable="qz_material_itemlist" ScrmField="remark" ErpTable="cb_MaterialDetail" ErpField="Remark" ErpFieldDesc="备注"/>
+    </ServiceConfig>
+    <!-- 保存材料调差单 -->
+    <ServiceConfig ServiceName="UpSavePriceDifferenceAdjust" ErpApiName="UpSavePriceDifferenceAdjust" ErpApiDesc="保存材料调差单">
+        <Attribute ScrmTable="qz_price_difference" ScrmField="biz_title" ErpTable="cb_MaterialDiffApply" ErpField="AlterName" ErpFieldDesc="变更名称"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="description" ErpTable="cb_MaterialDiffApply" ErpField="Remarks" ErpFieldDesc="变更说明"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="alter_type" ErpTable="cb_MaterialDiffApply" ErpField="AlterType" ErpFieldDesc="变更类型"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="alter_reason" ErpTable="cb_MaterialDiffApply" ErpField="AlterReason" ErpFieldDesc="变更原因"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="apply_amount" ErpTable="cb_MaterialDiffApply" ErpField="YdgcxtApplyAmount" ErpType="money" ErpFieldDesc="ERP变更申报金额"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="approval_amount" ErpTable="cb_MaterialDiffApply" ErpField="YdgcxtAmount" ErpType="money" ErpFieldDesc="变更审核金额 "/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="fq_date" ErpTable="cb_MaterialDiffApply" ErpField="ReportDate" ErpFieldDesc="提出时间"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="ydgcxtstatus" ScrmExpression="CAST('2' AS SIGNED) as ydgcxtstatus" ErpTable="cb_MaterialDiffApply" ErpField="YdgcxtStatusEnum" ErpFieldDesc="移动工程协同审批状态"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="biz_id" ErpTable="cb_MaterialDiffApply" ErpField="YdgcxtId" ErpFieldDesc="移动工程协同单据主键"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="erp_biz_guid" ErpTable="cb_MaterialDiffApply" ErpField="BusinessGuid" ErpFieldDesc="移动工程协同单据主键"/>
+    </ServiceConfig>
+    <ServiceConfig ServiceName="GetPriceDifferenceAdjustFromErp" ErpApiName="GetPriceDifferenceAdjustFromErp" ErpApiDesc="获取材料调差"></ServiceConfig>
+    <ServiceConfig ServiceName="GetPriceDifferenceAdjust" ErpApiName="GetPriceDifferenceAdjust" ErpApiDesc="获取材料调差">
+        <Attribute ScrmTable="qz_price_difference" ScrmField="biz_title" ErpTable="cb_MaterialDiffApply" ErpField="AlterName" ErpFieldDesc="变更名称"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="description" ErpTable="cb_MaterialDiffApply" ErpField="Remarks" ErpFieldDesc="详细内容"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="alter_type" ErpTable="cb_MaterialDiffApply" ErpField="AlterType" ErpFieldDesc="变更类型"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="alter_reason" ErpTable="cb_MaterialDiffApply" ErpField="AlterReason" ErpFieldDesc="变更原因"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="involve_majors" ErpTable="cb_MaterialDiffApply" ErpField="InvolveMajors" ErpFieldDesc="涉及专业"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="apply_amount" ErpTable="cb_MaterialDiffApply" ErpField="YdgcxtApplyAmount" ErpFieldDesc="变更申报金额"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="approval_amount" ErpTable="cb_MaterialDiffApply" ErpField="YdgcxtAmount" ErpFieldDesc="变更审核金额"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="alter_code" ErpTable="cb_MaterialDiffApply" ErpField="AlterCode" ErpApiDesc="变更编号"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="erp_biz_guid" ErpTable="cb_MaterialDiffApply" ErpField="PriceDifferenceAdjustGUID" ErpApiDesc="主键"/>
+        <Attribute ScrmTable="qz_price_difference" ScrmField="erp_refused_reason" ErpTable="cb_MaterialDiffApply" ErpField="YdgcxtCancelReason" ErpApiDesc="打回原因"/>
+    </ServiceConfig>
+    <!-- 产业合同结算-同步结算实例 -->
+    <ServiceConfig ServiceName="GetBalanceInstance" ErpApiName="GetBalanceInstance" ErpApiDesc=" 产业合同结算-同步结算实例">
+        <Attribute ScrmTable="qz_balance_instance" ScrmField="erp_instance_id" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="结算实例同步"/>
+        <Attribute ScrmTable="qz_balance_instance" ScrmField="provider_property" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="结算实例同步"/>
+        <Attribute ScrmTable="qz_balance_instance" ScrmField="design_alter_amount" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="结算实例同步"/>
+        <Attribute ScrmTable="qz_balance_instance" ScrmField="visa_alter_amount" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="结算实例同步"/>
+        <Attribute ScrmTable="qz_balance_instance" ScrmField="material_diff_amount" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="结算实例同步"/>
+        <Attribute ScrmTable="qz_balance_instance" ScrmField="total_deducted_amount" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="结算实例同步"/>
+    </ServiceConfig>
+    <!-- 产业合同结算-同步结算实例-流程 -->
+    <ServiceConfig ServiceName="GetBalanceInstance.GetProcess" ErpApiName="GetBalanceInstance.GetProcess" ErpApiDesc=" 产业合同结算-同步结算实例-获取流程">
+        <Attribute ScrmTable="qz_balance_process" ScrmField="erp_process_guid" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="流程主键"/>
+        <Attribute ScrmTable="qz_balance_process" ScrmField="process_node_type" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="节点类型"/>
+        <Attribute ScrmTable="qz_balance_process" ScrmField="process_name" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="流程名称"/>
+        <Attribute ScrmTable="qz_balance_process" ScrmField="process_state" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="流程状态"/>
+        <Attribute ScrmTable="qz_balance_process" ScrmField="plan_finish_date" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="计划完成时间"/>
+        <Attribute ScrmTable="qz_balance_process" ScrmField="real_finish_date" ErpTable="cb_BalanceProcess" ErpField="BalanceProcessGUID" ErpFieldDesc="实际完成时间"/>
+    </ServiceConfig>
+    <!-- 产业合同结算-同步结算实例-结算申请 -->
+    <ServiceConfig ServiceName="GetBalanceInstance.GetBalanceApply" ErpApiName="GetBalanceInstance.GetBalanceApply" ErpApiDesc=" 产业合同结算-同步结算实例-结算申请">
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="erp_biz_guid" ErpTable="cb_BalanceApply" ErpField="BalanceApplyGUID" ErpFieldDesc="ERP主键"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="apply_remarks" ErpTable="cb_BalanceApply" ErpField="ApplyRemarks" ErpFieldDesc="申请说明"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="sign_user_erp_guid" ErpTable="cb_BalanceApply" ErpField="ApplyUserGUID" ErpFieldDesc="申请人GUID"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="sign_user_name" ErpTable="cb_BalanceApply" ErpField="ApplyUserName" ErpFieldDesc="申请人姓名"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="apply_date" ErpTable="cb_BalanceApply" ErpField="ApplyDate" ErpFieldDesc="申请日期"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="completion_date" ErpTable="cb_BalanceApply" ErpField="CompletionDate" ErpFieldDesc="竣工日期"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="send_audit_amount" ErpTable="cb_BalanceApply" ErpField="SendAuditAmount" ErpFieldDesc="送审金额"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="start_date" ErpTable="cb_BalanceApply" ErpField="StartDate" ErpFieldDesc="开工日期"/>
+    </ServiceConfig>
+    <!-- 产业合同结算-同步结算实例-初审节点 -->
+    <ServiceConfig ServiceName="GetBalanceInstance.GetBalanceEngineeringFirstAudit" ErpApiName="GetBalanceInstance.GetBalanceEngineeringFirstAudit" ErpApiDesc=" 产业合同结算-同步结算实例-初审节点">
+        <Attribute ScrmTable="qz_balance_first_audit" ScrmField="erp_biz_guid" ErpTable="cb_BalanceEngineeringFirstAudit" ErpField="EngFirstAuditGUID" ErpFieldDesc="ERP主键"/>
+        <Attribute ScrmTable="qz_balance_first_audit" ScrmField="completion_date" ErpTable="cb_BalanceEngineeringFirstAudit" ErpField="CompletionDate" ErpFieldDesc="竣工日期"/>
+        <Attribute ScrmTable="qz_balance_first_audit" ScrmField="first_audit_amount" ErpTable="cb_BalanceEngineeringFirstAudit" ErpField="FirstAuditAmount" ErpFieldDesc="初审金额"/>
+        <Attribute ScrmTable="qz_balance_first_audit" ScrmField="first_audit_date" ErpTable="cb_BalanceEngineeringFirstAudit" ErpField="FirstAuditDate" ErpFieldDesc="初审日期"/>
+        <Attribute ScrmTable="qz_balance_first_audit" ScrmField="first_audit_dept_guid" ErpTable="cb_BalanceEngineeringFirstAudit" ErpField="FirstAuditDeptGUID" ErpFieldDesc="初审单位GUID"/>
+        <Attribute ScrmTable="qz_balance_first_audit" ScrmField="first_audit_dept_name" ErpTable="cb_BalanceEngineeringFirstAudit" ErpField="FirstAuditDeptName" ErpFieldDesc="初审单位名称"/>
+        <Attribute ScrmTable="qz_balance_first_audit" ScrmField="first_audit_remarks" ErpTable="cb_BalanceEngineeringFirstAudit" ErpField="FirstAuditRemarks" ErpFieldDesc="初审说明"/>
+        <Attribute ScrmTable="qz_balance_first_audit" ScrmField="first_audit_user_guid" ErpTable="cb_BalanceEngineeringFirstAudit" ErpField="FirstAuditUserGUID" ErpFieldDesc="初审人GUID"/>
+        <Attribute ScrmTable="qz_balance_first_audit" ScrmField="first_audit_user_name" ErpTable="cb_BalanceEngineeringFirstAudit" ErpField="FirstAuditUserName" ErpFieldDesc="初审人姓名"/>
+        <Attribute ScrmTable="qz_balance_first_audit" ScrmField="start_date" ErpTable="cb_BalanceEngineeringFirstAudit" ErpField="StartDate" ErpFieldDesc="开工日期"/>
+    </ServiceConfig>
+    <!-- 产业合同结算-同步结算实例-送社会单位协审 -->
+    <ServiceConfig ServiceName="GetBalanceInstance.GetBalanceSendAssistAudit" ErpApiName="GetBalanceInstance.GetBalanceSendAssistAudit" ErpApiDesc=" 产业合同结算-同步结算实例-送社会单位协审">
+        <Attribute ScrmTable="qz_balance_send_assist_audit" ScrmField="erp_biz_guid" ErpTable="cb_BalanceSendAssistAudit" ErpField="SendAssistAuditGUID" ErpFieldDesc="ERP主键"/>
+        <Attribute ScrmTable="qz_balance_send_assist_audit" ScrmField="assist_co_name" ErpTable="cb_BalanceSendAssistAudit" ErpField="AssistCoName" ErpFieldDesc="协审单位名称"/>
+        <Attribute ScrmTable="qz_balance_send_assist_audit" ScrmField="send_audit_amount" ErpTable="cb_BalanceSendAssistAudit" ErpField="SendAuditAmount" ErpFieldDesc="送审金额"/>
+        <Attribute ScrmTable="qz_balance_send_assist_audit" ScrmField="send_audit_date" ErpTable="cb_BalanceSendAssistAudit" ErpField="SendAuditDate" ErpFieldDesc="送审日期"/>
+        <Attribute ScrmTable="qz_balance_send_assist_audit" ScrmField="send_audit_remarks" ErpTable="cb_BalanceSendAssistAudit" ErpField="SendAuditRemarks" ErpFieldDesc="送审说明"/>
+    </ServiceConfig>
+    <!-- 产业合同结算-同步结算实例-签收外审报告 -->
+    <ServiceConfig ServiceName="GetBalanceInstance.GetBalanceSignInAuditReport" ErpApiName="GetBalanceInstance.GetBalanceSignInAuditReport" ErpApiDesc=" 产业合同结算-同步结算实例-签收外审报告">
+        <Attribute ScrmTable="qz_balance_signin_audit_report" ScrmField="erp_biz_guid" ErpTable="cb_BalanceSignInAuditReport" ErpField="BalanceSignInAuditReportGUID" ErpFieldDesc="ERP主键"/>
+        <Attribute ScrmTable="qz_balance_signin_audit_report" ScrmField="send_audit_amount" ErpTable="cb_BalanceSignInAuditReport" ErpField="SendAuditAmount" ErpFieldDesc="送审金额"/>
+        <Attribute ScrmTable="qz_balance_signin_audit_report" ScrmField="sign_in_date" ErpTable="cb_BalanceSignInAuditReport" ErpField="SignInDate" ErpFieldDesc="签收日期"/>
+        <Attribute ScrmTable="qz_balance_signin_audit_report" ScrmField="sign_in_remarks" ErpTable="cb_BalanceSignInAuditReport" ErpField="SignInRemarks" ErpFieldDesc="签收说明"/>
+        <Attribute ScrmTable="qz_balance_signin_audit_report" ScrmField="third_party_audit_amount" ErpTable="cb_BalanceSignInAuditReport" ErpField="ThirdPartyAuditAmount" ErpFieldDesc="第三方审定金额"/>
+        <Attribute ScrmTable="qz_balance_signin_audit_report" ScrmField="sign_in_audit_report_sj_amount" ErpTable="cb_BalanceSignInAuditReport" ErpField="SignInAuditReportSjAmount" ErpFieldDesc="审减金额"/>
+        <Attribute ScrmTable="qz_balance_signin_audit_report" ScrmField="sign_in_audit_report_sjl" ErpTable="cb_BalanceSignInAuditReport" ErpField="SignInAuditReportSjl" ErpFieldDesc="审减率"/>
+    </ServiceConfig>
+    <!-- 产业合同结算-同步结算实例-结算定案 -->
+    <ServiceConfig ServiceName="GetBalanceInstance.GetBalanceFinalize" ErpApiName="GetBalanceInstance.GetBalanceFinalize" ErpApiDesc=" 产业合同结算-同步结算实例-结算定案">
+        <Attribute ScrmTable="qz_balance_finalize" ScrmField="erp_biz_guid" ErpTable="cb_BalanceFinalize" ErpField="BalanceFinalizeGUID" ErpFieldDesc="ERP主键"/>
+        <Attribute ScrmTable="qz_balance_finalize" ScrmField="approved_amount" ErpTable="cb_BalanceFinalize" ErpField="ApprovedAmount" ErpFieldDesc="审定金额"/>
+        <Attribute ScrmTable="qz_balance_finalize" ScrmField="approved_date" ErpTable="cb_BalanceFinalize" ErpField="ApprovedDate" ErpFieldDesc="审定日期"/>
+        <Attribute ScrmTable="qz_balance_finalize" ScrmField="finalize_remarks" ErpTable="cb_BalanceFinalize" ErpField="Remarks" ErpFieldDesc="详细说明"/>
+        <Attribute ScrmTable="qz_balance_finalize" ScrmField="send_audit_amount" ErpTable="cb_BalanceFinalize" ErpField="SendAuditAmount" ErpFieldDesc="送审金额"/>
+    </ServiceConfig>
+    <!-- 产业合同结算-同步结算实例-结算审批 -->
+    <ServiceConfig ServiceName="GetBalanceInstance.GetHTBalance" ErpApiName="GetBalanceInstance.GetHTBalance" ErpApiDesc=" 产业合同结算-同步结算实例-结算审批">
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="erp_biz_guid" ErpTable="cb_HTBalance" ErpField="HtBalanceGuid" ErpFieldDesc="ERP主键"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="balance_amount" ErpTable="cb_HTBalance" ErpField="BalanceAmountBz" ErpFieldDesc="总造价（原币）"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="balance_doc_no" ErpTable="cb_HTBalance" ErpField="BalanceDocNo" ErpFieldDesc="结算书编号"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="balance_type" ErpTable="cb_HTBalance" ErpField="BalanceType" ErpFieldDesc="结算类型"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="balance_name" ErpTable="cb_HTBalance" ErpField="BalanceName" ErpFieldDesc="结算名称"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="bx_amount" ErpTable="cb_HTBalance" ErpField="BxAmount" ErpFieldDesc="质保金金额"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="bx_date" ErpTable="cb_HTBalance" ErpField="BxDate" ErpFieldDesc="质保日期"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="bx_percent" ErpTable="cb_HTBalance" ErpField="BxPercent" ErpFieldDesc="保修比例"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="bz_name" ErpTable="cb_HTBalance" ErpField="BzName" ErpFieldDesc="币种名称"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="balance_content" ErpTable="cb_HTBalance" ErpField="Content" ErpFieldDesc="结算内容"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="deduct_amount" ErpTable="cb_HTBalance" ErpField="DeductAmount" ErpFieldDesc="合同扣款金额"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="js_date" ErpTable="cb_HTBalance" ErpField="JsDate" ErpFieldDesc="结算日期"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="paid_amount" ErpTable="cb_HTBalance" ErpField="PaidAmount" ErpFieldDesc="实际已付金额"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="payable_amount" ErpTable="cb_HTBalance" ErpField="PayableAmount" ErpFieldDesc="应付净值"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="received_amount" ErpTable="cb_HTBalance" ErpField="ReceivedAmount" ErpFieldDesc="实际已收金额"/>
+        <Attribute ScrmTable="qz_balance_approval" ScrmField="remarks" ErpTable="cb_HTBalance" ErpField="Remarks" ErpFieldDesc="详细说明"/>
+    </ServiceConfig>
+    <!-- 产业合同结算-同步结算实例-合同备案 -->
+    <ServiceConfig ServiceName="GetBalanceInstance.GetBalanceFiling" ErpApiName="GetBalanceInstance.GetBalanceFiling" ErpApiDesc=" 产业合同结算-同步结算实例-合同备案">
+        <Attribute ScrmTable="qz_balance_filing" ScrmField="erp_biz_guid" ErpTable="cb_BalanceFiling" ErpField="BalanceFilingGUID" ErpFieldDesc="ERP主键"/>
+        <Attribute ScrmTable="qz_balance_filing" ScrmField="filing_date" ErpTable="cb_BalanceFiling" ErpField="FilingDate" ErpFieldDesc="备案日期"/>
+        <Attribute ScrmTable="qz_balance_filing" ScrmField="filing_remarks" ErpTable="cb_BalanceFiling" ErpField="Remarks" ErpFieldDesc="详细说明"/>
+    </ServiceConfig>
+    <!-- 产业合同结算-签发结算申请 -->
+    <ServiceConfig ServiceName="BalanceInstance.SaveBalanceApply" ErpApiName="BalanceInstance.SaveBalanceApply" ErpApiDesc=" 产业合同结算-签发结算申请">
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="erp_biz_guid" ErpTable="cb_BalanceApply" ErpField="BalanceApplyGUID" ErpFieldDesc="ERP结算申请GUID"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="apply_date" ErpTable="cb_BalanceApply" ErpField="ApplyDate" ErpFieldDesc="申请日期"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="apply_remarks" ErpTable="cb_BalanceApply" ErpField="ApplyRemarks" ErpFieldDesc="申请说明"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="completion_date" ErpTable="cb_BalanceApply" ErpField="CompletionDate" ErpFieldDesc="竣工日期"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="send_audit_amount" ErpTable="cb_BalanceApply" ErpField="SendAuditAmount" ErpFieldDesc="送审金额"/>
+        <Attribute ScrmTable="qz_balance_apply" ScrmField="start_date" ErpTable="cb_BalanceApply" ErpField="StartDate" ErpFieldDesc="开工日期"/>
+    </ServiceConfig>
+</SyncConfigs>

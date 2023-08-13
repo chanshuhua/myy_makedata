@@ -1,0 +1,23 @@
+env:
+  gcxt_beta : 'https://gcxt-beta.myfuwu.com.cn/'
+
+tenant:
+  gcxt_autotest : 'autotest'
+
+contract_info :
+  contract_id : 6836
+
+user_info:
+  admin : ['autotestadmin','123']
+  jl : ['18665555066','aa123456']
+  jf : ['18665555011','aa123456']
+
+biz_type_flow:
+  # 0为自由流程，1为固定流程
+  # 固定流程选择的审批岗位
+  flow_type : 0
+  biz_type: 2
+  change_type : "现场签证"
+  flow : [3,{"auto_审批1":"甲方项目管理员","签发":"甲方项目管理员"}]
+
+
