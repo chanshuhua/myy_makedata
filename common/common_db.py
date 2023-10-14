@@ -9,4 +9,5 @@ class db():
     def db_conn(self,db_name):
         conn = pymysql.connect(host=self.host,port=self.port,user=self.user,passwd=self.pwd,
                                db = db_name)
+        # print(conn)
         return conn

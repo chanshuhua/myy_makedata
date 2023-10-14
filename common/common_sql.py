@@ -1,8 +1,5 @@
 
-class sql():
-
-    def sql_query(self,db_conn,sql):
+def sql_query(db_conn,sql):
         cursor = db_conn.cursor()
         cursor.execute(sql)
-        result = cursor.fetchall()
-        return result
+        return [i[0] for i in cursor.fetchall()]

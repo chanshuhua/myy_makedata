@@ -5,6 +5,7 @@ import uuid
 from datetime import datetime,date
 import datetime
 import ssl
+import sql_tools
 
 create_default_https_context = ssl._create_unverified_context()
 
@@ -632,6 +633,29 @@ class makedata():
         confirm_result = date(2023,5,15) + datetime.timedelta(days=-90)
         return meet_result,work_result,confirm_result
 
+    def get_worksheet_contract(self,yl_user_id):
+        contract = set()
+        url = self.url +'/mip/custom-ngzy/get-enable-worksheet-list'
+        data = {
+                "tenantCode":"ngzy",
+                "userGuid":yl_user_id,
+                "keyword":"",
+                "erpWorksheetId":"",
+                "requestFrom":	"web",
+                "pageIndex":"1",
+                "pageSize"	:"1000"
+            }
+        headers = {
+            'content-type': "application/json",
+            'charset': 'UTF-8'
+        }
+        request_data = json.loads(
+            requests.post(url=url, data=json.dumps(data), headers=headers, verify=False).content.decode())
+
+        for i in request_data["data"]["list"]:
+            contract.add(int(i["contract_list"][0]["contract_id"]))
+
+        return contract
 
 if __name__ == '__main__':
     # request_data = makedata().check_data()
@@ -648,5 +672,18 @@ if __name__ == '__main__':
     # print(str(os.path.dirname(__file__))+'\data.json')
     # for i in range(5):
         # print(makedata().create_deduction_notice())
-    for i in range(5):
-         print(makedata().create_worksheet_gld_fix())
+    # print(sql_tools.query(sql = "SELECT contract_id FROM xt_project_contract WHERE project_id in (SELECT project_id FROM xt_jf_project WHERE user_id = '516167')"))
+    # print(makedata().get_worksheet_contract("3a0d2ee7-ce25-8475-7d2e-4180ee37bdf5"))
+    # account = 'hl02'
+    # yunfuwu_user_id = sql_tools.query(sql="select yunfuwu_user_id from xt_user where yunfuwu_account = '%s'" % account)[0]
+    # user_id = sql_tools.query(sql="select user_id from xt_user where yunfuwu_account = '%s'" % account)[0]
+    #
+    # for i in makedata().get_worksheet_contract("%s" %yunfuwu_user_id):
+    #     if i not in sql_tools.query(sql = "SELECT contract_id FROM xt_project_contract WHERE project_id in (SELECT project_id FROM xt_jf_project WHERE user_id = '%s')" %user_id):
+    #         print("%s 不在列表中" %i)
+    #
+
+
+    test=set()
+    print(sorted(test))
+    print(type(sorted(test)))

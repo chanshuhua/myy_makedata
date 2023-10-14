@@ -187,3 +187,9 @@ contract-payment/get-bank-info
 /analytics/telemetry/ph/api/hyper/send
 /contract/get-subcontract-list
 /htjs/get-relate-price-sheet-detail
+/configurable/xt-sign-log/delete
+/configurable/xt-sign-log/get
+/configurable/xt-sign-log/get-list
+/configurable/xt-sign-log/insert
+/configurable/xt-sign-log/update
+/consultation/get-list-count
