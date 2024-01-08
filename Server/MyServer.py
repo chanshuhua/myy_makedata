@@ -70,6 +70,13 @@ def login():
     else:
         error = 'Invalid request!'
         return error
+
+@server.route("/test/mock",methods=['POST'])
+def mock():
+    data = {}
+    return data
+
+
 if __name__ == '__main__':
     server.run(host='localhost',port='59999',debug=True)
     # users = [{"chenshuhua": 111}, {"chenshuhua": 222}]

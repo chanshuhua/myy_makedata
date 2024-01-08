@@ -261,6 +261,8 @@
         <Attribute ScrmTable="qz_payment" ScrmField="apply_amount" ErpTable="cb_HTFKApply" ErpField="YdgcxtYFApplyAmount" ErpType="money" ErpFieldDesc="乙方申请金额"/>
         <Attribute ScrmTable="qz_payment" ScrmField="fq_date" ErpTable="cb_HTFKApply" ErpField="ApplyDate" ErpFieldDesc="申请付款日期"/>
         <Attribute ScrmTable="qz_payment" ScrmField="description" ErpTable="cb_HTFKApply" ErpField="ApplyRemarks" ErpFieldDesc="付款说明"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="yf_provider_guid" ErpTable="cb_HTFKApply" ErpField="YfProviderGUIDs" ErpFieldDesc="乙方单位guid"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="yf_provider_name" ErpTable="cb_HTFKApply" ErpField="YfProviderNames" ErpFieldDesc="乙方单位名称"/>
         <Attribute ScrmTable="qz_payment" ScrmField="ydgcxtstatus" ScrmExpression="2 as ydgcxtstatus" ErpTable="cb_HTFKApply" ErpField="YdgcxtStatusEnum" ErpApiDesc="付款申请-同步移动工程协同状态YdgcxtStatusEnum为已审核"/>
     </ServiceConfig>
     <ServiceConfig ServiceName="GetHTFKApply" ErpApiName="GetHTFKApply" ErpApiDesc="获取付款申请">
@@ -268,19 +270,16 @@
         <Attribute ScrmTable="qz_payment" ScrmField="subject" ErpTable="cb_HTFKApply" ErpField="Subject" ErpFieldDesc="付款申请主题"/>
         <Attribute ScrmTable="qz_payment" ScrmField="description" ErpTable="cb_HTFKApply" ErpField="ApplyRemarks" ErpFieldDesc="付款说明"/>
         <Attribute ScrmTable="qz_payment" ScrmField="apply_code" ErpTable="cb_HTFKApply" ErpField="ApplyCode" ErpFieldDesc="申请编号"/>
+        <!-- <Attribute ScrmTable="qz_payment" ScrmField="fund_type" ErpTable="cb_HTFKApply" ErpField="FundType" ErpFieldDesc="款项类型"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="fund_name" ErpTable="cb_HTFKApply" ErpField="FundName" ErpFieldDesc="款项名称"/> -->
         <Attribute ScrmTable="qz_payment" ScrmField="pay_provider_name" ErpTable="cb_HTFKApply" ErpField="PayProviderName" ErpFieldDesc="付款单位名称"/>
-        <Attribute ScrmTable="qz_payment" ScrmField="fund_type" ErpTable="cb_HTFKApply" ErpField="FundType" ErpFieldDesc="款项类型"/>
-        <Attribute ScrmTable="qz_payment" ScrmField="fund_name" ErpTable="cb_HTFKApply" ErpField="FundName" ErpFieldDesc="款项名称"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="receive_provider_name" ErpTable="cb_HTFKApply" ErpField="ReceiveProviderName" ErpFieldDesc="收款单位名称"/>
         <Attribute ScrmTable="qz_payment" ScrmField="bank_name" ErpTable="cb_HTFKApply" ErpField="BankName" ErpFieldDesc="开户银行"/>
         <Attribute ScrmTable="qz_payment" ScrmField="bank_accounts" ErpTable="cb_HTFKApply" ErpField="BankAccounts" ErpFieldDesc="银行账户"/>
-        <!-- SaasERP  协同申请金额+ERP申请金额通过付款明细计算，所以不需要同步，避免出现覆盖的情况
-        <Attribute ScrmTable="qz_payment" ScrmField="apply_amount" ErpTable="cb_HTFKApply" ErpField="ApplyAmount" ErpFieldDesc="申请金额_人民币"/>
-        <Attribute ScrmTable="qz_payment" ScrmField="erp_apply_amount" ErpTable="cb_HTFKApply" ErpField="ErpApplyAmount" ErpFieldDesc="内部申报金额_人民币"/>
-        -->
-        <Attribute ScrmTable="qz_payment" ScrmField="erp_refused_reason" ErpTable="cb_HTFKApply" ErpField="YdgcxtCancelReason" ErpFieldDesc="打回原因"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="erp_refused_reason" ErpTable="cb_HTFKApply" ErpField="YdgcxtCancelReason" ErpFieldDesc="申请金额_人民币"/>
         <Attribute ScrmTable="qz_payment" ScrmField="receive_provider_guid" ErpTable="cb_HTFKApply" ErpField="ReceiveProviderGUID" ErpFieldDesc="收款单位GUID"/>
         <Attribute ScrmTable="qz_payment" ScrmField="receive_provider_name" ErpTable="cb_HTFKApply" ErpField="ReceiveProviderName" ErpFieldDesc="收款单位名称"/>
-        <Attribute ScrmTable="qz_payment" ScrmField="yf_provider_guid" ErpTable="cb_HTFKApply" ErpField="YfProviderGUIDs" ErpFieldDesc="乙方单位Guid"/>
+        <Attribute ScrmTable="qz_payment" ScrmField="yf_provider_guid" ErpTable="cb_HTFKApply" ErpField="YfProviderGUIDs" ErpFieldDesc="乙方单位"/>
         <Attribute ScrmTable="qz_payment" ScrmField="yf_provider_name" ErpTable="cb_HTFKApply" ErpField="YfProviderNames" ErpFieldDesc="乙方单位"/>
     </ServiceConfig>
     <ServiceConfig ServiceName="GetHTFKApplyFromErp" ErpApiName="GetHTFKApplyFromErp" ErpApiDesc="获取付款申请">
@@ -614,4 +613,16 @@
         <Attribute ScrmTable="qz_balance_apply" ScrmField="send_audit_amount" ErpTable="cb_BalanceApply" ErpField="SendAuditAmount" ErpFieldDesc="送审金额"/>
         <Attribute ScrmTable="qz_balance_apply" ScrmField="start_date" ErpTable="cb_BalanceApply" ErpField="StartDate" ErpFieldDesc="开工日期"/>
     </ServiceConfig>
+
+	<!-- Java重构使用-->
+	<ServiceConfig ServiceName="GetAlterType" ErpApiName="PullData.asmx" ErpApiDesc="同步变更类型" SqlText="SELECT * FROM cb_altertype">
+        <Attribute ScrmTable="gcxt_altertype" ScrmField="AlterTypeGUID" ErpTable="cb_AlterType" ErpField="AlterTypeGUID" ErpFieldDesc="变更类型及原因设置主键"/>
+        <Attribute ScrmTable="gcxt_altertype" ScrmField="BUGUID" ErpTable="cb_AlterType" ErpField="BUGUID" ErpFieldDesc="公司主键"/>
+        <Attribute ScrmTable="gcxt_altertype" ScrmField="Order" ErpTable="cb_AlterType" ErpField="Order" ErpFieldDesc="排序"/>
+        <Attribute ScrmTable="gcxt_altertype" ScrmField="ParentGUID" ErpTable="cb_AlterType" ErpField="ParentGUID" ErpFieldDesc="父级主键"/>
+        <Attribute ScrmTable="gcxt_altertype" ScrmField="ScopeTypeEnums" ErpTable="cb_AlterType" ErpField="ScopeTypeEnums" ErpFieldDesc="适用范围枚举"/>
+        <Attribute ScrmTable="gcxt_altertype" ScrmField="ScopeTypeNames" ErpTable="cb_AlterType" ErpField="ScopeTypeNames" ErpFieldDesc="适用范围名称"/>
+		<Attribute ScrmTable="gcxt_altertype" ScrmField="Text" ErpTable="cb_AlterType" ErpField="Text" ErpFieldDesc="选项名称"/>
+    </ServiceConfig>
+
 </SyncConfigs>

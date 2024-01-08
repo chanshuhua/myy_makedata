@@ -186,10 +186,15 @@ contract-payment/get-bank-info
 /seal-drawing-accept/del
 /analytics/telemetry/ph/api/hyper/send
 /contract/get-subcontract-list
+/htjs/get-relate-price-sheet
 /htjs/get-relate-price-sheet-detail
+/htjs/get-relate-design-worksheet
+/htjs/get-relate-design-worksheet-detail
+/htjs/get-relate-visa-worksheet-detail
 /configurable/xt-sign-log/delete
 /configurable/xt-sign-log/get
 /configurable/xt-sign-log/get-list
 /configurable/xt-sign-log/insert
 /configurable/xt-sign-log/update
 /consultation/get-list-count
+/app/get-app-center-info
